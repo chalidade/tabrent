@@ -7,11 +7,13 @@ import DetailPromo from './home/detail_promo';
 const Stack = createStackNavigator();
 const styles = StyleSheet.create({
     container: {
-      paddingTop: 50,
+      paddingTop: 30,
+      paddingLeft:15,
+      paddingRight:15
     },
     tinyLogo: {
-      width: 50,
-      height: 50,
+      width: '100%',
+      height: 160,
     },
     logo: {
       width: 66,
@@ -21,11 +23,11 @@ const styles = StyleSheet.create({
 
 function HomeScreen({ navigation }) {
     return (
-      <View style={{ flex: 1, padding: '50px' }} accessibilityImage={false}>
+      <View style={styles.container}>
       <TouchableHighlight onPress={() => navigation.navigate('Detail Promo')}>
         <Image
          style={styles.tinyLogo}
-         source={{ uri: 'https://reactnative.dev/img/tiny_logo.png'}}
+         source={require('../../assets/home/banner_1.svg')}
       />
       </TouchableHighlight>
       </View>

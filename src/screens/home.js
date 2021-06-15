@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
       paddingLeft:15,
       paddingRight:15
     },
-    tinyLogo: {
+    banner: {
       width: '100%',
       height: 160,
     },
@@ -26,7 +26,7 @@ function HomeScreen({ navigation }) {
       <View style={styles.container}>
       <TouchableHighlight onPress={() => navigation.navigate('Detail Promo')}>
         <Image
-         style={styles.tinyLogo}
+         style={styles.banner}
          source={require('../../assets/home/banner_1.svg')}
       />
       </TouchableHighlight>

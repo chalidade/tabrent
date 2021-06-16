@@ -3,6 +3,7 @@ import { Text, View, Button, Image, StyleSheet, TouchableHighlight } from 'react
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import DetailPromo from './home/detail_promo';
+import Navigation from '../components/navigation';
 
 const Stack = createStackNavigator();
 const styles = StyleSheet.create({
@@ -23,23 +24,32 @@ const styles = StyleSheet.create({
 
 function HomeScreen({ navigation }) {
     return (
-      <View style={styles.container}>
-      <TouchableHighlight onPress={() => navigation.navigate('Detail Promo')}>
+      <View>
+        <Navigation />
+        <Banner />
+      </View>
+    );
+  }
+
+function Banner({navigation}) {
+  return (
+  <View style={styles.container}>
+      {/* <TouchableHighlight onPress={() => navigation.navigate('Detail Promo')}>
         <Image
          style={styles.banner}
          source={require('../../assets/home/banner_1.svg')}
       />
-      </TouchableHighlight>
+      </TouchableHighlight> */}
       </View>
-    );
-  }
+  )
+}
   
 function Home() {
     return (
-      <NavigationContainer independent={true}>
+      <NavigationContainer independent={true} >
         <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Detail Promo" component={DetailPromo} />
+          <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
+          <Stack.Screen name="Detail Promo" component={DetailPromo} options={{headerShown:false}} />
         </Stack.Navigator>
       </NavigationContainer>
     );

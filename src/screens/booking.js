@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
 
-export default function List() {
+export default function booking() {
     return (            
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Test Screen</Text>
+        <Text>Booking Screen</Text>
     </View>
     );
 }

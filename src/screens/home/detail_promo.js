@@ -23,8 +23,6 @@ const Styles = StyleSheet.create({
   },
 });
 
-
-
 const TextStyle = StyleSheet.create({
   title: {
     color:'#2F2F8D',
@@ -65,7 +63,7 @@ export default function DetailPromo(){
     <TouchableHighlight>
       <Image
       style={Styles.tinyLogo}
-      source={require('.../../../assets/home/image_1.svg')}
+      source={require('../../../assets/home/image_1.svg')}
       />
     </TouchableHighlight>
     <Text

@@ -4,13 +4,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import DetailPromo from './home/detail_promo';
 import Navigation from '../components/navigation';
+import Card from '../components/card';
 
 const Stack = createStackNavigator();
 const styles = StyleSheet.create({
     container: {
       paddingTop: 30,
       paddingLeft:15,
-      paddingRight:15
+      paddingRight:15,
+      position: '!important',
     },
     banner: {
       width: '100%',
@@ -27,23 +29,25 @@ function HomeScreen({ navigation }) {
       <View>
         <Navigation />
         <Banner />
+        <Card />
       </View>
     );
   }
 
-function Banner({navigation}) {
+function Banner({ navigation }) {
   return (
   <View style={styles.container}>
-      {/* <TouchableHighlight onPress={() => navigation.navigate('Detail Promo')}>
+      {<TouchableHighlight onPress={() => navigation.navigate('Detail Promo')}>
         <Image
          style={styles.banner}
          source={require('../../assets/home/banner_1.svg')}
       />
-      </TouchableHighlight> */}
-      </View>
-  )
+      </TouchableHighlight>
 }
-  
+      </View>
+  );
+}
+
 function Home() {
     return (
       <NavigationContainer independent={true} >

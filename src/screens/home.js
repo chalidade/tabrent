@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import DetailPromo from './home/detail_promo';
 import Navigation from '../components/navigation';
-import Card from '../components/card';
+import Cards from '../components/cards';
 
 const Stack = createStackNavigator();
 const styles = StyleSheet.create({
@@ -29,7 +29,7 @@ function HomeScreen({ navigation }) {
       <View>
         <Navigation />
         <Banner />
-        <Card />
+        <Cards />
       </View>
     );
   }
@@ -37,13 +37,12 @@ function HomeScreen({ navigation }) {
 function Banner({ navigation }) {
   return (
   <View style={styles.container}>
-      {<TouchableHighlight onPress={() => navigation.navigate('Detail Promo')}>
+      <TouchableHighlight onPress={() => navigation.navigate('Detail Promo')}>
         <Image
          style={styles.banner}
          source={require('../../assets/home/banner_1.svg')}
       />
       </TouchableHighlight>
-}
       </View>
   );
 }
@@ -53,7 +52,7 @@ function Home() {
       <NavigationContainer independent={true} >
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
-          <Stack.Screen name="Detail Promo" component={DetailPromo} options={{headerShown:false}} />
+          <Stack.Screen name="Detail Promo" component={DetailPromo} options={{headerShown:true}} />
         </Stack.Navigator>
       </NavigationContainer>
     );

@@ -17,32 +17,32 @@ const styles = StyleSheet.create({
     height: 65,
     width: "100%",
     paddingTop: 10,
-    // boxShadow: "0px 3px 10px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0px 3px 10px rgba(0, 0, 0, 0.1)",
     flexDirection: "row",
   },
   navItem: {
-    flex: 0.25,
+    flex: "0.25",
     textAlign: "center",
   },
   navText: {
     fontSize: 12,
     marginTop: 4,
-    fontWeight: "bold",
+    fontWeight: 700,
     color: "#C8C8C8",
   },
   navTextActive: {
     fontSize: 12,
     marginTop: 4,
-    fontWeight: "bold",
+    fontWeight: 700,
     color: "#000080",
   },
   navIcon: {
     color: "#C8C8C8",
-    fontSize: 20,
+    fontSize: "3vh",
   },
   navIconActive: {
     color: "#000080",
-    fontSize: 20,
+    fontSize: "3vh",
   },
 });
 

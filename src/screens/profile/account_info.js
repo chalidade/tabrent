@@ -19,10 +19,16 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingLeft: 20,
     paddingRight: 20,
-    borderRadius: 20,
+    borderRadius: "20px",
   },
-  screenMenu: {
-    padding: 25,
+  banner: {
+    width: "100%",
+    height: 160,
+    borderRadius: "10px",
+  },
+  logo: {
+    width: 66,
+    height: 58,
   },
 });
 
@@ -35,9 +41,8 @@ function Main({ navigation }) {
         back="true"
         url="Profile"
       />
-      <View style={styles.screenMenu}>
-        <Text> Account Info </Text>
-      </View>
+      <Text> Account Info </Text>
+      <NavigationBottom screen="profile" />
     </View>
   );
 }

@@ -22,11 +22,13 @@ const styles = StyleSheet.create({
     width: 55,
     height: 55,
     borderRadius: 50,
-    color: "#2F2F8D",
-    fontSize: 24,
-    fontWeight: 700,
     marginTop: 5,
     marginLeft: 10,
+  },
+  profilePictText: {
+    color: "#2F2F8D",
+    fontSize: 24,
+    fontWeight: "700",
   },
   verifiedBox: {
     width: 90,
@@ -42,7 +44,7 @@ const textStyle = StyleSheet.create({
   title: {
     marginTop: 15,
     fontSize: 16,
-    fontWeight: 700,
+    fontWeight: "700",
     color: "#FFF",
   },
   subTitle: {
@@ -57,7 +59,7 @@ const textStyle = StyleSheet.create({
     flexDirection: "row",
     height: 49,
     backgroundColor: "#EAEAEA",
-    borderRadius: "10px",
+    borderRadius: 10,
   },
 });
 
@@ -70,7 +72,9 @@ export default function navigation({
   return (
     <View style={styles.navContainer}>
       <View style={{ flex: 0.25 }}>
-        <View style={styles.profilePict}>TA</View>
+        <View style={styles.profilePict}>
+          <Text style={styles.profilePictText}>TA</Text>
+        </View>
       </View>
       <View style={{ flex: 0.45 }}>
         <Text style={textStyle.title}>Tabrent Apps</Text>

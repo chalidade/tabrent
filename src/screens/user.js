@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import DetailPromo from "./home/detail_promo";
 import Notification from "./notification";
 import Home from "./home";
 import Booking from "./booking";
@@ -32,7 +31,8 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   hr: {
-    border: "1px solid #C8C8C8",
+    borderWidth: 1,
+    borderColor: "#C8C8C8",
   },
   textMenu: {
     fontSize: 18,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   textMenuEmergency: {
     fontSize: 18,
     color: "#D60000",
-    fontWeight: 600,
+    fontWeight: "600",
   },
   textMenuLogout: {
     fontSize: 18,
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
 function Main({ navigation }) {
   return (
     <View style={styles.screen}>
-      <NavigationProfile navigation={navigation}/>
+      <NavigationProfile navigation={navigation} />
       <View style={styles.screenMenu}>
         <View>
           <Text style={styles.textMenu}> Became a rental Owner </Text>
@@ -196,11 +196,6 @@ function Route() {
         <Stack.Screen
           name="Notification"
           component={Notification}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Detail Promo"
-          component={DetailPromo}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

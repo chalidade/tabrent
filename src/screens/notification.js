@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import DetailPromo from "./home/detail_promo";
 import User from "./user";
 import Home from "./home";
 import Booking from "./booking";
@@ -23,12 +22,12 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingLeft: 20,
     paddingRight: 20,
-    borderRadius: "20px",
+    borderRadius: 20,
   },
   banner: {
     width: "100%",
     height: 160,
-    borderRadius: "10px",
+    borderRadius: 10,
   },
   logo: {
     width: 66,
@@ -42,19 +41,6 @@ function Main({ navigation }) {
       <Navigation />
       <Text> Notification </Text>
       <NavigationBottom navigation={navigation} screen="notification" />
-    </View>
-  );
-}
-
-function Banner({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <TouchableHighlight onPress={() => navigation.navigate("Detail Promo")}>
-        <Image
-          style={styles.banner}
-          source={require("../../assets/home/banner_1.svg")}
-        />
-      </TouchableHighlight>
     </View>
   );
 }
@@ -81,11 +67,6 @@ function Route() {
         <Stack.Screen
           name="User"
           component={User}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Detail Promo"
-          component={DetailPromo}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

@@ -38,30 +38,29 @@ const Styles = StyleSheet.create({
 const TextStyle = StyleSheet.create({
   title: {
     color: "#2F2F8D",
-    size: "20",
+    fontSize: 20,
     fontWeight: "bold",
-    alignItems: "left",
+    alignItems: "flex-start",
     paddingLeft: 10,
   },
 
   description: {
     color: "#000000",
-    fontWeight: 400,
-    LineHeight: 24,
+    fontWeight: "400",
+    lineHeight: 24,
     paddingTop: 10,
     paddingLeft: 10,
     paddingRight: 15,
-    alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "center",
-    background: "#FFFFFF",
   },
 
   lite: {
     color: "#C8C8C8",
-    size: "100",
-    weight: "400",
+    fontSize: 10,
+    fontWeight: "400",
     fontStyle: "italic",
-    align: "left",
+    alignItems: "flex-start",
     paddingTop: 10,
     paddingLeft: 10,
   },

@@ -1,61 +1,97 @@
-import React from 'react';
-import { Text, View, Button, Image, StyleSheet, TouchableHighlight } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import DetailPromo from './home/detail_promo';
-import Navigation from '../components/navigation';
-import Cards from '../components/cards';
+import React from "react";
+import {
+  Text,
+  View,
+  Button,
+  Image,
+  StyleSheet,
+  TouchableHighlight,
+} from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import DetailPromo from "./home/detail_promo";
+import Notification from "./notification";
+import Booking from "./booking";
+import User from "./user";
+import Navigation from "../components/global/navigation_top";
+import NavigationBottom from "../components/global/navigation_bottom";
+import Cards from "../components/cards";
 
 const Stack = createStackNavigator();
 const styles = StyleSheet.create({
-    container: {
-      paddingTop: 30,
-      paddingLeft:15,
-      paddingRight:15,
-      position: '!important',
-    },
-    banner: {
-      width: '100%',
-      height: 160,
-    },
-    logo: {
-      width: 66,
-      height: 58,
-    },
-  });
+  container: {
+    paddingTop: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
+    borderRadius: "20px",
+  },
+  banner: {
+    width: "100%",
+    height: 160,
+    borderRadius: "10px",
+  },
+  logo: {
+    width: 66,
+    height: 58,
+  },
+});
 
-function HomeScreen({ navigation }) {
-    return (
-      <View>
-        <Navigation />
-        <Banner />
-        <Cards />
-      </View>
-    );
-  }
-
-function Banner({ navigation }) {
+function Main({ navigation }) {
   return (
-  <View style={styles.container}>
-      <TouchableHighlight onPress={() => navigation.navigate('Detail Promo')}>
-        <Image
-         style={styles.banner}
-         source={require('../../assets/home/banner_1.svg')}
-      />
-      </TouchableHighlight>
-      </View>
+    <View style={{ backgroundColor: "#fff", height: "100%" }}>
+      <Navigation />
+      <Banner navigation={navigation} />
+      <Cards />
+      <NavigationBottom navigation={navigation} screen="home" />
+    </View>
   );
 }
 
-function Home() {
-    return (
-      <NavigationContainer independent={true} >
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
-          <Stack.Screen name="Detail Promo" component={DetailPromo} options={{headerShown:true}} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    );
-  }
+function Banner({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <TouchableHighlight onPress={() => navigation.navigate("Detail Promo")}>
+        <Image
+          style={styles.banner}
+          source={require("../../assets/home/banner_1.svg")}
+        />
+      </TouchableHighlight>
+    </View>
+  );
+}
 
-export default Home;
+function Route() {
+  return (
+    <NavigationContainer independent={true}>
+      <Stack.Navigator initialRouteName="Main">
+        <Stack.Screen
+          name="Main"
+          component={Main}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Booking"
+          component={Booking}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="User"
+          component={User}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Notification"
+          component={Notification}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Detail Promo"
+          component={DetailPromo}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default Route;

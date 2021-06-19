@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingLeft: 20,
     paddingRight: 20,
-    borderRadius: "20px",
+    borderRadius: 20,
   },
   banner: {
     width: "100%",
     height: 160,
-    borderRadius: "10px",
+    borderRadius: 10,
   },
   logo: {
     width: 66,

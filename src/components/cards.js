@@ -8,7 +8,7 @@ price: {
     color:'#000080',
     fontSize : 12,
     fontWeight : 'bold',
-    alignItems : 'left',
+    alignItems: "flex-start",
     paddingLeft : 5,
     paddingTop : 7,
     lineHeight : 15
@@ -16,11 +16,11 @@ price: {
 
   owner: {
     color:'#000000',
-    fontWeight : 700,
+    fontWeight : '700',
     fontSize : 8,
-    LineHeight : 9,
-    align:'left',
-    fontStyle : 'Calibri',
+    lineHeight : 9,
+    textAlign:'left',
+    // fontStyle : 'Calibri',
     paddingLeft : 5,
 
   },
@@ -28,9 +28,9 @@ price: {
   carName:{
     color:'#000000',
     fontSize : 6,
-    fontWeight : 400,
-    align: 'left',
-    fontStyle : 'Calibri',
+    fontWeight : '400',
+    textAlign: 'left',
+    // fontStyle : 'Calibri',
     paddingLeft : 5
   }
 
